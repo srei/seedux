@@ -2,7 +2,7 @@
   "manifest_version": 2,
   "name": "Seedux",
   "description": "Redux dev tool",
-  "version": "1.0",
+  "version": "0.0.4",
   "author": "Ahmad Kanawi, Michael Lampe, Stephenie Reimer",
   "browser_action": {
     "default_icon": "icon.png",
@@ -14,6 +14,7 @@
     "https://ajax.googleapis.com/",
     "storage"
   ],
+  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
   "externally_connectable": {
     "matches": ["*://localhost/*"]
   },

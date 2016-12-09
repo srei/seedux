@@ -13,6 +13,16 @@ body {
   color: $primColor;
   background-color: $bgColor;
 }
+h1 {
+  display: inline;
+}
+.flashMessage {
+  margin: 0 1em;
+}
+
+ul {
+  padding-left: 0;
+}
 
 .diff-json-container {
   @extend .well;
@@ -55,4 +65,28 @@ button, select {
   border-radius: 5px;
   padding: 0.25em 0.5em;
   margin: 0.5em;
+}
+
+.activeSetting {
+  background-color: green;
+}
+
+.disabledSetting {
+  background-color: red;
+}
+
+.menu-lines {
+  list-style-type: none;
+  text-align: center;
+}
+
+.settings-menu {
+  float: right;
+  text-align: center;
+  width: 12%;
+  z-index: 1;
+}
+
+.settings-title {
+  text-align: center;
 }
