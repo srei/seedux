@@ -3,6 +3,7 @@ import Graph from './components/Graph.jsx';
 import D3Viz from './components/D3Viz';
 import ParsingError from './components/ParsingError';
 import Log from './components/Log';
+import searchBar from './components/searchBar';
 
 class App extends React.Component {
   constructor(props) {
@@ -105,7 +106,7 @@ class App extends React.Component {
     if (this.state.history.length) {
       diffs = this.state.history[this.state.history.length - 1].diffs;
     }
-    // curry our restore function to provide invididual button functionality
+    // curry our restore function to provide individual button functionality
     const restoreFromHistory = (index) => this.restore('past', index);
     const restoreFromFuture = (index) => this.restore('future', index);
     const undo = () => this.restore('past', this.state.history.length - 2);
@@ -128,6 +129,7 @@ class App extends React.Component {
         <button onClick={() => this.unStashLog()}>Unstash Log</button>
         <button onClick={undo}>Undo</button>
         <button onClick={redo}>Redo</button>
+        <searchBar/>
         <Log history={this.state.history} future={this.state.future} restoreFromHistory={restoreFromHistory} restoreFromFuture={restoreFromFuture} />
       </div>
     )

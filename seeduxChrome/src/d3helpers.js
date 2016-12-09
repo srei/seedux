@@ -135,12 +135,13 @@ function buildBasicTree(element, data, config, searchTerm) {
   .attr('height', CHART_HEIGHT)
   .append('g')
   .attr('transform', 'translate(20,0)');
+
   let ourCluster = cluster()
     .size([CHART_HEIGHT * BREADTH_SPACING_FACTOR, CHART_WIDTH * DEPTH_SPACING_FACTOR])
     .separation(function(a, b) {
       return a.parent == b.parent ? 2 : 3;
     });
-  // passes hierarchiacal data into cluster to create the root node
+  // passes hierarchical data into cluster to create the root node
   let nodeHierarchy = hierarchy(data);
 
   ourCluster(nodeHierarchy);

@@ -66,4 +66,5 @@ chrome.runtime.onMessage.addListener((msg, sender, response) => {
     // store the app's tab ID for use later in passing UNDO/REDO messages
     tabId = sender.tab.id;
   }
+  console.log('this is history', history);
 });
