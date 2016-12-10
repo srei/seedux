@@ -1,4 +1,4 @@
-import { select, cluster, hierarchy, append } from 'd3';
+import { select, tree, hierarchy, append } from 'd3';
 
 // default chart size and spacing constants
 const config = {};
@@ -135,8 +135,12 @@ function buildBasicTree(element, data, config, searchTerm) {
   .attr('height', CHART_HEIGHT)
   .append('g')
   .attr('transform', 'translate(20,0)');
+<<<<<<< HEAD
 
   let ourCluster = cluster()
+=======
+  let ourCluster = tree()
+>>>>>>> master
     .size([CHART_HEIGHT * BREADTH_SPACING_FACTOR, CHART_WIDTH * DEPTH_SPACING_FACTOR])
     .separation(function(a, b) {
       return a.parent == b.parent ? 2 : 3;
